@@ -1,0 +1,1450 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Akil Youcef-Zakaria · Portfolio · Clifford Chance Paris</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --navy: #0D1F3C;
+    --navy-mid: #142D52;
+    --navy-light: #1E3F6F;
+    --blue: #2255A4;
+    --blue-light: #3A6EC0;
+    --slate: #5C6B84;
+    --rule: #2A3A52;
+    --rule-light: #D0D8E8;
+    --off-white: #EFF3FA;
+    --white: #FAFCFF;
+    --text-muted: #8A9AB5;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Montserrat', sans-serif;
+    background: var(--navy);
+    color: var(--off-white);
+    overflow-x: hidden;
+  }
+
+  @media print {
+    @page { size: A4 landscape; margin: 0; }
+    nav { display: none; }
+    section { page-break-after: always; width: 297mm; height: 210mm; }
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    height: 60px;
+    padding: 0 64px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(13,31,60,0.95);
+    border-bottom: 0.5px solid var(--rule);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+  }
+
+  .nav-brand {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 15px;
+    font-weight: 300;
+    letter-spacing: 0.1em;
+    color: var(--off-white);
+    text-decoration: none;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 28px;
+    list-style: none;
+  }
+
+  .nav-links a {
+    font-size: 7.5px;
+    font-weight: 500;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: color 0.25s;
+  }
+
+  .nav-links a:hover { color: var(--off-white); }
+
+  /* ── SECTIONS ── */
+  section { min-height: 100vh; position: relative; overflow: hidden; }
+
+  .container {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 0 64px;
+  }
+
+  .eyebrow {
+    font-size: 7px;
+    font-weight: 600;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--blue-light);
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .eyebrow::before {
+    content: '';
+    display: block;
+    width: 28px;
+    height: 1px;
+    background: var(--blue);
+  }
+
+  /* ═══════════════════════════
+     PAGE 1 · COVER
+  ═══════════════════════════ */
+  #cover {
+    background: var(--navy);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding-bottom: 80px;
+  }
+
+  /* Dot grid */
+  #cover::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(circle, rgba(34,85,164,0.35) 1px, transparent 1px);
+    background-size: 36px 36px;
+  }
+
+  /* Gradient overlay */
+  #cover::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, var(--navy) 45%, rgba(13,31,60,0.3) 100%);
+  }
+
+  .cover-content {
+    position: relative;
+    z-index: 2;
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 0 64px;
+  }
+
+  .cover-firm {
+    font-size: 7px;
+    font-weight: 600;
+    letter-spacing: 0.36em;
+    text-transform: uppercase;
+    color: var(--blue-light);
+    margin-bottom: 28px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .cover-firm::before {
+    content: '';
+    display: block;
+    width: 40px;
+    height: 1px;
+    background: var(--blue);
+  }
+
+  .cover-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(52px, 7.5vw, 90px);
+    font-weight: 300;
+    letter-spacing: 0.04em;
+    line-height: 0.88;
+    color: var(--white);
+    margin-bottom: 24px;
+  }
+
+  .cover-subtitle {
+    font-size: 9px;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 44px;
+    max-width: 540px;
+    line-height: 2.1;
+  }
+
+  .cover-meta {
+    display: flex;
+    gap: 52px;
+    border-top: 0.5px solid var(--rule);
+    padding-top: 20px;
+  }
+
+  .cmi {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .cmi-label {
+    font-size: 6px;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+  }
+
+  .cmi-value {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 13px;
+    font-weight: 300;
+    color: var(--off-white);
+    letter-spacing: 0.06em;
+  }
+
+  /* ═══════════════════════════
+     PAGE 2 · WHO I AM
+  ═══════════════════════════ */
+  #about {
+    background: var(--navy-mid);
+    padding: 120px 0;
+    display: flex;
+    align-items: center;
+  }
+
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.7fr;
+    gap: 72px;
+    align-items: center;
+  }
+
+  .about-monogram {
+    aspect-ratio: 1;
+    background: var(--navy);
+    border: 0.5px solid var(--rule);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    max-width: 300px;
+  }
+
+  .monogram-inner {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 72px;
+    font-weight: 300;
+    color: rgba(34,85,164,0.3);
+    letter-spacing: -0.02em;
+  }
+
+  .monogram-label {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 12px 16px;
+    border-top: 0.5px solid var(--rule);
+    font-size: 6.5px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--blue-light);
+    text-align: center;
+  }
+
+  .about-intro {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 24px;
+    font-weight: 300;
+    font-style: italic;
+    line-height: 1.45;
+    color: var(--off-white);
+    margin-bottom: 28px;
+  }
+
+  .about-body {
+    font-size: 9.5px;
+    line-height: 1.9;
+    color: var(--text-muted);
+    margin-bottom: 20px;
+  }
+
+  .tag-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+    margin-top: 24px;
+  }
+
+  .tag {
+    font-size: 6.5px;
+    font-weight: 500;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    padding: 5px 12px;
+    border: 0.5px solid var(--rule);
+    color: var(--text-muted);
+  }
+
+  .tag-blue {
+    border-color: var(--blue);
+    color: var(--blue-light);
+  }
+
+  /* ═══════════════════════════
+     PAGE 3 · ACADEMIC
+  ═══════════════════════════ */
+  #education {
+    background: var(--navy);
+    padding: 120px 0;
+    display: flex;
+    align-items: center;
+  }
+
+  .edu-timeline {
+    padding-left: 36px;
+    border-left: 0.5px solid var(--rule);
+    margin-top: 44px;
+  }
+
+  .edu-entry {
+    position: relative;
+    margin-bottom: 52px;
+  }
+
+  .edu-entry::before {
+    content: '';
+    position: absolute;
+    left: -40px;
+    top: 5px;
+    width: 7px;
+    height: 7px;
+    background: var(--blue);
+  }
+
+  .edu-period {
+    font-size: 6.5px;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: var(--blue-light);
+    margin-bottom: 8px;
+  }
+
+  .edu-degree {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+    font-weight: 300;
+    color: var(--white);
+    margin-bottom: 5px;
+    line-height: 1.2;
+  }
+
+  .edu-school {
+    font-size: 8px;
+    font-weight: 500;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 12px;
+  }
+
+  .edu-desc {
+    font-size: 9.5px;
+    line-height: 1.8;
+    color: var(--slate);
+    max-width: 640px;
+  }
+
+  .pill-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin-top: 12px;
+  }
+
+  .pill {
+    font-size: 6.5px;
+    letter-spacing: 0.1em;
+    padding: 3px 9px;
+    border: 0.5px solid var(--rule);
+    color: var(--slate);
+  }
+
+  /* ═══════════════════════════
+     PAGE 4 · SKILLS
+  ═══════════════════════════ */
+  #skills {
+    background: var(--navy-mid);
+    padding: 120px 0;
+    display: flex;
+    align-items: center;
+  }
+
+  .skills-header {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 42px;
+    font-weight: 300;
+    color: var(--white);
+    line-height: 1.1;
+    margin-bottom: 52px;
+  }
+
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    background: transparent;
+  }
+
+  .skill-block {
+    background: var(--navy);
+    padding: 40px 32px;
+    transition: background 0.25s;
+    border: 0.5px solid var(--rule-light);
+  }
+
+  .skill-block:hover { background: var(--navy-light); }
+
+  .sb-bar {
+    width: 32px;
+    height: 1.5px;
+    background: var(--blue);
+    margin-bottom: 20px;
+  }
+
+  .sb-name {
+    font-size: 8px;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--off-white);
+    margin-bottom: 18px;
+  }
+
+  .sb-items span {
+    display: block;
+    font-size: 10px;
+    color: var(--slate);
+    line-height: 2.2;
+  }
+
+  /* ═══════════════════════════
+     PAGE 5 · PROJECTS
+  ═══════════════════════════ */
+  #projects {
+    background: var(--navy);
+    padding: 120px 0;
+    display: flex;
+    align-items: center;
+  }
+
+  .projects-intro {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 32px;
+    font-weight: 300;
+    font-style: italic;
+    color: var(--off-white);
+    max-width: 680px;
+    line-height: 1.35;
+    margin-bottom: 56px;
+  }
+
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1px;
+    background: var(--rule);
+  }
+
+  .pj-card {
+    background: var(--navy-mid);
+    padding: 36px 32px;
+    position: relative;
+    overflow: hidden;
+    transition: background 0.25s;
+  }
+
+  .pj-card:hover { background: var(--navy-light); }
+
+  .pj-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 56px;
+    font-weight: 300;
+    color: var(--rule);
+    position: absolute;
+    top: 12px;
+    right: 20px;
+    line-height: 1;
+  }
+
+  .pj-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 19px;
+    font-weight: 300;
+    color: var(--white);
+    margin-bottom: 10px;
+    line-height: 1.2;
+  }
+
+  .pj-stack {
+    font-size: 6.5px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--blue-light);
+    margin-bottom: 14px;
+  }
+
+  .pj-desc {
+    font-size: 9px;
+    line-height: 1.8;
+    color: var(--slate);
+  }
+
+  .pj-link-tag {
+    display: inline-block;
+    margin-top: 12px;
+    font-size: 6.5px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--blue-light);
+    border-bottom: 0.5px solid var(--blue);
+    padding-bottom: 2px;
+  }
+
+  /* ═══════════════════════════
+     PAGE 6 · DATA & ANALYSIS
+  ═══════════════════════════ */
+  #data {
+    background: var(--navy-mid);
+    padding: 120px 0;
+    display: flex;
+    align-items: center;
+  }
+
+  .data-bento {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 1px;
+    background: var(--rule);
+    margin-top: 44px;
+  }
+
+  .bento {
+    background: var(--navy);
+    padding: 32px 28px;
+    transition: background 0.25s;
+  }
+
+  .bento:hover { background: var(--navy-light); }
+
+  .bento.span-2 { grid-column: 1 / -1; }
+
+  .bento-label {
+    font-size: 6px;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--blue-light);
+    margin-bottom: 12px;
+  }
+
+  .bento-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+    font-weight: 300;
+    color: var(--white);
+    margin-bottom: 12px;
+    line-height: 1.2;
+  }
+
+  .bento-text {
+    font-size: 9px;
+    line-height: 1.8;
+    color: var(--slate);
+  }
+
+  .metrics {
+    display: flex;
+    gap: 32px;
+    margin-top: 20px;
+  }
+
+  .met {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+  }
+
+  .met-val {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 34px;
+    font-weight: 300;
+    color: var(--blue-light);
+    line-height: 1;
+  }
+
+  .met-lbl {
+    font-size: 6px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+  }
+
+  /* ═══════════════════════════
+     PAGE 7 · ENTREPRENEURIAL
+  ═══════════════════════════ */
+  #entrepreneurial {
+    background: var(--navy);
+    padding: 120px 0;
+    display: flex;
+    align-items: center;
+  }
+
+  .exp-list {
+    margin-top: 44px;
+    border-top: 0.5px solid var(--rule);
+  }
+
+  .exp-item {
+    display: grid;
+    grid-template-columns: 180px 1fr auto;
+    gap: 28px;
+    align-items: start;
+    padding: 28px 0;
+    border-bottom: 0.5px solid var(--rule);
+    transition: background 0.2s;
+  }
+
+  .exp-item:hover {
+    background: rgba(34,85,164,0.04);
+  }
+
+  .exp-org {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 17px;
+    font-weight: 300;
+    color: var(--white);
+    line-height: 1.1;
+  }
+
+  .exp-period-sm {
+    font-size: 6.5px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--blue-light);
+    margin-top: 5px;
+  }
+
+  .exp-content {}
+
+  .exp-role-title {
+    font-size: 7px;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 10px;
+  }
+
+  .exp-bullets {
+    list-style: none;
+  }
+
+  .exp-bullets li {
+    font-size: 9px;
+    line-height: 1.7;
+    color: var(--slate);
+    padding-left: 14px;
+    position: relative;
+    margin-bottom: 3px;
+  }
+
+  .exp-bullets li::before {
+    content: '›';
+    position: absolute;
+    left: 0;
+    color: var(--blue);
+  }
+
+  .exp-badge {
+    font-size: 6px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--blue-light);
+    border: 0.5px solid var(--blue);
+    padding: 4px 10px;
+    white-space: nowrap;
+    align-self: start;
+  }
+
+  /* ═══════════════════════════
+     PAGE 8 · AI & INNOVATION
+  ═══════════════════════════ */
+  #innovation {
+    background: var(--navy-mid);
+    padding: 120px 0;
+    display: flex;
+    align-items: center;
+    position: relative;
+  }
+
+  #innovation::before {
+    content: 'AI';
+    position: absolute;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(120px, 20vw, 240px);
+    font-weight: 300;
+    color: rgba(34,85,164,0.06);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    letter-spacing: 0.1em;
+    pointer-events: none;
+  }
+
+  .inno-content { position: relative; z-index: 1; }
+
+  .inno-intro {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 30px;
+    font-weight: 300;
+    font-style: italic;
+    color: var(--off-white);
+    max-width: 680px;
+    line-height: 1.4;
+    margin-bottom: 52px;
+  }
+
+  .inno-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--rule);
+    margin-bottom: 44px;
+  }
+
+  .inno-card {
+    background: var(--navy);
+    padding: 28px 24px;
+    transition: background 0.25s;
+  }
+
+  .inno-card:hover { background: var(--navy-light); }
+
+  .ic-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 26px;
+    font-weight: 300;
+    color: var(--blue-light);
+    margin-bottom: 10px;
+  }
+
+  .ic-title {
+    font-size: 7px;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--off-white);
+    margin-bottom: 10px;
+  }
+
+  .ic-text {
+    font-size: 9px;
+    line-height: 1.8;
+    color: var(--slate);
+  }
+
+  .inno-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+  }
+
+  /* ═══════════════════════════
+     PAGE 9 · WHY CLIFFORD CHANCE
+  ═══════════════════════════ */
+  #why {
+    background: var(--navy);
+    padding: 120px 0;
+    display: flex;
+    align-items: center;
+    position: relative;
+  }
+
+  #why::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: radial-gradient(circle, rgba(34,85,164,0.2) 1px, transparent 1px);
+    background-size: 48px 48px;
+    opacity: 0.4;
+  }
+
+  .why-content { position: relative; z-index: 1; }
+
+  .why-intro {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 32px;
+    font-weight: 300;
+    font-style: italic;
+    color: var(--off-white);
+    max-width: 700px;
+    line-height: 1.4;
+    margin-bottom: 52px;
+  }
+
+  .why-reasons {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--rule);
+    margin-bottom: 52px;
+  }
+
+  .why-card {
+    background: var(--navy-mid);
+    padding: 28px 24px;
+    transition: background 0.25s;
+  }
+
+  .why-card:hover { background: var(--navy-light); }
+
+  .why-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 24px;
+    font-weight: 300;
+    color: var(--blue-light);
+    margin-bottom: 10px;
+  }
+
+  .why-title {
+    font-size: 7px;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--off-white);
+    margin-bottom: 10px;
+  }
+
+  .why-text {
+    font-size: 9px;
+    line-height: 1.8;
+    color: var(--slate);
+  }
+
+  .why-statement {
+    border-left: 2px solid var(--blue);
+    padding-left: 24px;
+  }
+
+  .why-statement-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 16px;
+    font-weight: 300;
+    font-style: italic;
+    color: var(--off-white);
+    line-height: 1.6;
+  }
+
+  /* ═══════════════════════════
+     PAGE 10 · CONTACT
+  ═══════════════════════════ */
+  #contact {
+    background: var(--navy-mid);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 120px 0;
+  }
+
+  .contact-headline {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(32px, 5vw, 56px);
+    font-weight: 300;
+    color: var(--white);
+    line-height: 1.1;
+    margin-bottom: 44px;
+  }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1px;
+    background: var(--rule);
+    margin-bottom: 44px;
+  }
+
+  .contact-item {
+    background: var(--navy);
+    padding: 24px 26px;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    transition: background 0.25s;
+  }
+
+  .contact-item:hover { background: var(--navy-light); }
+
+  .ci-label {
+    font-size: 6px;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: var(--blue-light);
+  }
+
+  .ci-value {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 16px;
+    font-weight: 300;
+    color: var(--off-white);
+    letter-spacing: 0.04em;
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .ci-value:hover { color: var(--blue-light); }
+
+  .contact-footer {
+    border-top: 0.5px solid var(--rule);
+    padding-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .cf-brand {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px;
+    font-weight: 300;
+    color: var(--text-muted);
+    letter-spacing: 0.06em;
+  }
+
+  .cf-note {
+    font-size: 6.5px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+  }
+
+  /* ── FADE ── */
+  .fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+
+  .fade-in.visible { opacity: 1; transform: none; }
+
+  @media (max-width: 768px) {
+    nav { padding: 0 24px; }
+    .nav-links { display: none; }
+    .container { padding: 0 24px; }
+    .cover-content { padding: 0 24px; }
+    .about-grid, .skills-grid, .projects-grid, .inno-cards, .why-reasons, .contact-grid { grid-template-columns: 1fr; }
+    .data-bento { grid-template-columns: 1fr; }
+    .exp-item { grid-template-columns: 1fr; }
+    .exp-badge { display: none; }
+    section { min-height: auto; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-brand" href="#cover">Akil Youcef-Zakaria</a>
+  <ul class="nav-links">
+    <li><a href="#about">Profil</a></li>
+    <li><a href="#education">Formation</a></li>
+    <li><a href="#skills">Compétences</a></li>
+    <li><a href="#projects">Projets</a></li>
+    <li><a href="#innovation">IA</a></li>
+    <li><a href="#why">Clifford Chance</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- PAGE 1 · COVER -->
+<section id="cover">
+  <div class="cover-content">
+    <div class="cover-firm">Candidature Spontanée · Clifford Chance Paris · Data / AI / Innovation</div>
+    <div class="cover-name">Akil<br>Youcef-Zakaria</div>
+    <div class="cover-subtitle">
+      L3 Ingénierie Informatique · IA &amp; Systèmes de Données<br>
+      Analytique · Scientifique · Orienté Données · Entrepreneurial
+    </div>
+    <div class="cover-meta">
+      <div class="cmi"><span class="cmi-label">Disponibilité</span><span class="cmi-value">Juillet 2026</span></div>
+      <div class="cmi"><span class="cmi-label">Durée</span><span class="cmi-value">6 mois</span></div>
+      <div class="cmi"><span class="cmi-label">Lieu</span><span class="cmi-value">Paris</span></div>
+      <div class="cmi"><span class="cmi-label">Langues</span><span class="cmi-value">FR · AR · EN</span></div>
+      <div class="cmi"><span class="cmi-label">Contact</span><span class="cmi-value">Via A. Benarbia</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- PAGE 2 · WHO I AM -->
+<section id="about">
+  <div class="container">
+    <div class="about-grid fade-in">
+      <div>
+        <div class="about-monogram">
+          <div class="monogram-inner">AY</div>
+          <div class="monogram-label">Akil Youcef-Zakaria · Paris</div>
+        </div>
+      </div>
+      <div>
+        <div class="eyebrow">Who I am</div>
+        <div class="about-intro">
+          Scientifique de formation.<br>Data scientist en devenir.<br>Entrepreneur par nature.
+        </div>
+        <p class="about-body">
+          Issu d'une double formation universitaire — une licence en Ingénierie Physique-Chimie, puis une L3 en Ingénierie Informatique spécialité IA et Systèmes de Données — je combine rigueur analytique et appétit technologique. Je construis des systèmes d'IA concrets : agents documentaires, pipelines RAG, applications full-stack. Je m'intéresse aux environnements où la donnée crée de la valeur réelle.
+        </p>
+        <p class="about-body">
+          Clifford Chance représente pour moi l'un des rares environnements où la data science, l'intelligence artificielle et le droit se rencontrent à très haut niveau — une intersection qui me passionne et pour laquelle je pense pouvoir apporter une contribution concrète.
+        </p>
+        <div class="tag-row">
+          <span class="tag tag-blue">Data Science</span>
+          <span class="tag tag-blue">AI / LLM</span>
+          <span class="tag tag-blue">LegalTech</span>
+          <span class="tag">Python</span>
+          <span class="tag">RAG</span>
+          <span class="tag">NLP</span>
+          <span class="tag">Analyse</span>
+          <span class="tag">Innovation</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PAGE 3 · ACADEMIC -->
+<section id="education">
+  <div class="container">
+    <div class="eyebrow fade-in">Parcours académique</div>
+    <div class="edu-timeline fade-in">
+
+      <div class="edu-entry">
+        <div class="edu-period">2025 — 2026</div>
+        <div class="edu-degree">L3 Ingénierie Informatique<br>IA &amp; Systèmes de Données</div>
+        <div class="edu-school">Université de Montpellier · Faculté des Sciences</div>
+        <div class="edu-desc">
+          Machine learning, NLP, statistiques appliquées, data warehouse, bases de données relationnelles, conception de systèmes d'information. Ce cursus m'a donné les outils pour construire des systèmes data end-to-end — de la modélisation au déploiement — directement applicables aux enjeux d'un cabinet comme Clifford Chance : analyse documentaire à grande échelle, traitement du langage naturel, systèmes d'information juridiques.
+        </div>
+        <div class="pill-row">
+          <span class="pill">Python · SQL</span>
+          <span class="pill">Machine Learning</span>
+          <span class="pill">NLP</span>
+          <span class="pill">Data Warehouse</span>
+          <span class="pill">Oracle</span>
+          <span class="pill">Modélisation SI</span>
+          <span class="pill">Statistiques</span>
+        </div>
+      </div>
+
+      <div class="edu-entry">
+        <div class="edu-period">2021 — 2025</div>
+        <div class="edu-degree">Licence Ingénierie Physique-Chimie<br>Mécanique / Physique</div>
+        <div class="edu-school">Université de Montpellier · Faculté des Sciences</div>
+        <div class="edu-desc">
+          Formation fondamentale en sciences exactes : modélisation mathématique, optimisation, analyse quantitative, résolution structurée de problèmes. Ce socle scientifique rigoureux nourrit directement mon approche de la data science — privilégiant la compréhension des mécanismes sous-jacents plutôt que l'application aveugle de boîtes noires.
+        </div>
+        <div class="pill-row">
+          <span class="pill">Modélisation</span>
+          <span class="pill">Mathématiques appliquées</span>
+          <span class="pill">Optimisation</span>
+          <span class="pill">Simulation numérique</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PAGE 4 · SKILLS -->
+<section id="skills">
+  <div class="container">
+    <div class="eyebrow fade-in">Compétences &amp; technologies</div>
+    <div class="skills-header fade-in">Ce que je sais faire.<br>Ce que je construis.</div>
+    <div class="skills-grid fade-in">
+
+      <div class="skill-block">
+        <div class="sb-bar"></div>
+        <div class="sb-name">AI &amp; Machine Learning</div>
+        <div class="sb-items">
+          <span>Python (avancé)</span>
+          <span>LangChain · LangGraph</span>
+          <span>RAG · Embeddings</span>
+          <span>HuggingFace · ChromaDB</span>
+          <span>NLP · LLM</span>
+          <span>Deep Learning</span>
+          <span>Machine Learning classique</span>
+        </div>
+      </div>
+
+      <div class="skill-block">
+        <div class="sb-bar"></div>
+        <div class="sb-name">Data &amp; Systèmes</div>
+        <div class="sb-items">
+          <span>SQL · PostgreSQL</span>
+          <span>Oracle</span>
+          <span>Data Warehouse</span>
+          <span>Modélisation SI</span>
+          <span>Bases relationnelles</span>
+          <span>NoSQL</span>
+          <span>R · Excel avancé</span>
+        </div>
+      </div>
+
+      <div class="skill-block">
+        <div class="sb-bar"></div>
+        <div class="sb-name">Développement</div>
+        <div class="sb-items">
+          <span>FastAPI</span>
+          <span>Angular · TypeScript</span>
+          <span>Java · PHP</span>
+          <span>Git · Docker</span>
+          <span>Linux / CLI</span>
+          <span>Architecture logicielle</span>
+        </div>
+      </div>
+
+      <div class="skill-block">
+        <div class="sb-bar"></div>
+        <div class="sb-name">Analyse &amp; Reporting</div>
+        <div class="sb-items">
+          <span>Statistiques appliquées</span>
+          <span>Data Visualisation</span>
+          <span>Indicateurs métier</span>
+          <span>Reporting structuré</span>
+          <span>Analyse quantitative</span>
+        </div>
+      </div>
+
+      <div class="skill-block">
+        <div class="sb-bar"></div>
+        <div class="sb-name">Gestion de Projet</div>
+        <div class="sb-items">
+          <span>Pilotage end-to-end</span>
+          <span>Coordination multi-parties</span>
+          <span>Planification</span>
+          <span>Suivi opérationnel</span>
+          <span>Gestion entrepreneuriale</span>
+        </div>
+      </div>
+
+      <div class="skill-block">
+        <div class="sb-bar"></div>
+        <div class="sb-name">Langues</div>
+        <div class="sb-items">
+          <span>Français — Natif</span>
+          <span>Arabe — Natif</span>
+          <span>Anglais — Bilingue</span>
+          <span></span>
+          <span>Organisé · Rigoureux</span>
+          <span>Autonome · Curieux</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PAGE 5 · PROJECTS -->
+<section id="projects">
+  <div class="container">
+    <div class="eyebrow fade-in">Projets</div>
+    <div class="projects-intro fade-in">
+      Des systèmes construits de A à Z,<br>pas des tutoriels reproduits.
+    </div>
+    <div class="projects-grid fade-in">
+
+      <div class="pj-card">
+        <div class="pj-num">01</div>
+        <div class="pj-name">DocFlow — Gestion documentaire par agents IA</div>
+        <div class="pj-stack">FastAPI · LangGraph · LangChain · PostgreSQL · Docker</div>
+        <div class="pj-desc">Application full-stack d'analyse et de gestion documentaire avec agents autonomes. Extraction d'information, orchestration de workflows, traitement de documents structurés et non structurés. Parallèle direct avec les outils d'analyse documentaire développés en interne chez Clifford Chance (revues documentaires massives, NLP juridique).</div>
+        <span class="pj-link-tag">En cours · Legaltech-applicable</span>
+      </div>
+
+      <div class="pj-card">
+        <div class="pj-num">02</div>
+        <div class="pj-name">Pipeline Multi-Agent RAG d'Analyse d'Images</div>
+        <div class="pj-stack">LangChain · RAG · ChromaDB · HuggingFace · PySide6</div>
+        <div class="pj-desc">Architecture multi-agent avec base de connaissances métier, embeddings sémantiques, retrieval augmenté (RAG) et interface desktop PySide6. Conception d'un système d'aide à la décision reposant sur une base de connaissances vectorielle — applicable à l'indexation et à l'interrogation de corpus juridiques.</div>
+        <span class="pj-link-tag">En cours · NLP · Knowledge Base</span>
+      </div>
+
+      <div class="pj-card">
+        <div class="pj-num">03</div>
+        <div class="pj-name">Analyse de Données à Grande Échelle</div>
+        <div class="pj-stack">Python · Machine Learning · Data Warehouse · Statistical Learning</div>
+        <div class="pj-desc">Traitement, préparation et analyse d'un jeu de données volumeux (rapport des Français aux médias). Création d'indicateurs métier, application de méthodes ML et statistical learning sur data warehouse, reporting structuré. Maîtrise du cycle complet d'un projet data analytics.</div>
+        <span class="pj-link-tag">Data Analytics · Reporting</span>
+      </div>
+
+      <div class="pj-card">
+        <div class="pj-num">04</div>
+        <div class="pj-name">Application de Gestion de Workflows</div>
+        <div class="pj-stack">Angular · Docker · TypeScript</div>
+        <div class="pj-desc">Développement et conteneurisation d'une application de suivi de tâches et de statuts pour un déploiement reproductible en environnement d'équipe. Architecture en couches (Controller, Facade, DAO) pour structurer les responsabilités et faciliter la maintenabilité.</div>
+        <span class="pj-link-tag">Workflow · Architecture</span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PAGE 6 · DATA & ANALYSIS -->
+<section id="data">
+  <div class="container">
+    <div class="eyebrow fade-in">Data &amp; Analyse</div>
+    <div class="data-bento fade-in">
+
+      <div class="bento">
+        <div class="bento-label">Approche data</div>
+        <div class="bento-title">De la donnée brute à l'insight actionnable</div>
+        <div class="bento-text">Ma formation croise statistiques, machine learning, data warehouse et programmation scientifique. Je suis capable de prendre en charge l'ensemble du cycle d'un projet data : collecte, nettoyage, modélisation, visualisation, reporting. En contexte legaltech, cela se traduit par la capacité à structurer des corpus documentaires massifs, à en extraire des patterns pertinents et à alimenter des processus décisionnels.</div>
+        <div class="metrics">
+          <div class="met"><span class="met-val">3</span><span class="met-lbl">Langues</span></div>
+          <div class="met"><span class="met-val">5+</span><span class="met-lbl">Projets data</span></div>
+          <div class="met"><span class="met-val">2</span><span class="met-lbl">Formations uni.</span></div>
+        </div>
+      </div>
+
+      <div class="bento">
+        <div class="bento-label">Stack technique</div>
+        <div class="bento-title">Outils maîtrisés</div>
+        <div class="pill-row">
+          <span class="pill">Python</span>
+          <span class="pill">SQL</span>
+          <span class="pill">PostgreSQL</span>
+          <span class="pill">Oracle</span>
+          <span class="pill">Data Warehouse</span>
+          <span class="pill">R</span>
+          <span class="pill">Excel avancé</span>
+          <span class="pill">LangChain</span>
+          <span class="pill">RAG</span>
+          <span class="pill">ChromaDB</span>
+          <span class="pill">Git · Docker</span>
+        </div>
+      </div>
+
+      <div class="bento span-2">
+        <div class="bento-label">Pertinence legaltech</div>
+        <div class="bento-title">Data science appliquée au droit</div>
+        <div class="bento-text">
+          Les équipes Data Science de Clifford Chance travaillent sur des problématiques que je connais concrètement : NLP pour l'analyse documentaire (je développe DocFlow), systèmes RAG pour l'interrogation de bases de connaissances (pipeline multi-agent en cours), traitement automatisé à grande échelle (projet data warehouse universitaire), et interfaces en langage naturel. Ce n'est pas une liste de mots-clés — ce sont des chantiers que j'ai initiés et que je continue de faire avancer.
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PAGE 7 · ENTREPRENEURIAL -->
+<section id="entrepreneurial">
+  <div class="container">
+    <div class="eyebrow fade-in">Expériences entrepreneuriales</div>
+    <div class="exp-list fade-in">
+
+      <div class="exp-item">
+        <div>
+          <div class="exp-org">ASAP STORE</div>
+          <div class="exp-period-sm">Mai – Juin 2024</div>
+        </div>
+        <div class="exp-content">
+          <div class="exp-role-title">Co-fondateur · Montpellier · Pop-up Retail</div>
+          <ul class="exp-bullets">
+            <li>Conception et développement du site web du magasin</li>
+            <li>Stratégie de contenu digital complète (Instagram, TikTok) : production et publication</li>
+            <li>Coordination fournisseurs, prestataires et partenaires</li>
+            <li>Recrutement et management de l'équipe de vente</li>
+            <li>Pilotage de l'ensemble du projet de bout en bout</li>
+          </ul>
+        </div>
+        <div class="exp-badge">Entrepreneuriat</div>
+      </div>
+
+      <div class="exp-item">
+        <div>
+          <div class="exp-org">Roland Garros</div>
+          <div class="exp-period-sm">2024 &amp; 2025</div>
+        </div>
+        <div class="exp-content">
+          <div class="exp-role-title">Manager de Stand · Paris · Deux Éditions</div>
+          <ul class="exp-bullets">
+            <li>Supervision opérationnelle : ouverture/fermeture, gestion des stocks</li>
+            <li>Coordination d'équipe et maintien des standards de service</li>
+            <li>Gestion des flux en environnement premium à forte pression</li>
+          </ul>
+        </div>
+        <div class="exp-badge">Management</div>
+      </div>
+
+      <div class="exp-item">
+        <div>
+          <div class="exp-org">Studio Indépendant</div>
+          <div class="exp-period-sm">Juil. 2022 – auj.</div>
+        </div>
+        <div class="exp-content">
+          <div class="exp-role-title">Direction Artistique &amp; Gestion de Projet · Paris</div>
+          <ul class="exp-bullets">
+            <li>Direction artistique et construction d'image de marque autonome</li>
+            <li>Gestion budgétaire et coordination avec labels et distributeurs</li>
+            <li>Distribution multi-plateformes, gestion des réseaux sociaux</li>
+            <li>Maîtrise avancée Suite Adobe, outils numériques créatifs</li>
+          </ul>
+        </div>
+        <div class="exp-badge">Création</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PAGE 8 · AI & INNOVATION -->
+<section id="innovation">
+  <div class="container">
+    <div class="inno-content">
+      <div class="eyebrow fade-in">AI &amp; Innovation</div>
+      <div class="inno-intro fade-in">
+        L'IA n'est pas un sujet d'étude.<br>C'est ce que je construis.
+      </div>
+      <div class="inno-cards fade-in">
+
+        <div class="inno-card">
+          <div class="ic-num">I</div>
+          <div class="ic-title">Agents autonomes</div>
+          <div class="ic-text">DocFlow et le pipeline RAG sont des projets d'orchestration d'agents IA — pas des expériences isolées mais des architectures pensées pour la robustesse et la maintenabilité. LangGraph, LangChain, FastAPI constituent mon environnement quotidien.</div>
+        </div>
+
+        <div class="inno-card">
+          <div class="ic-num">II</div>
+          <div class="ic-title">Retrieval Augmenté</div>
+          <div class="ic-text">La technologie RAG — qui permet d'interroger des corpus documentaires via des embeddings sémantiques — est précisément celle que Clifford Chance déploie pour ses interfaces en langage naturel sur sujets juridiques. J'en maîtrise les fondamentaux et l'implémentation.</div>
+        </div>
+
+        <div class="inno-card">
+          <div class="ic-num">III</div>
+          <div class="ic-title">EU AI Act &amp; Gouvernance</div>
+          <div class="ic-text">Le cadre réglementaire de l'IA m'intéresse au-delà de la technique. L'EU AI Act, la gouvernance des données, les enjeux de conformité IA dans les organisations — des sujets sur lesquels Clifford Chance est à la fois acteur et conseil.</div>
+        </div>
+
+      </div>
+      <div class="inno-stack fade-in">
+        <span class="pill">LangChain</span>
+        <span class="pill">LangGraph</span>
+        <span class="pill">RAG</span>
+        <span class="pill">ChromaDB</span>
+        <span class="pill">HuggingFace</span>
+        <span class="pill">FastAPI</span>
+        <span class="pill">PostgreSQL</span>
+        <span class="pill">Docker</span>
+        <span class="pill">NLP</span>
+        <span class="pill">Embeddings</span>
+        <span class="pill">LLM</span>
+        <span class="pill">Python</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PAGE 9 · WHY CLIFFORD CHANCE -->
+<section id="why">
+  <div class="container">
+    <div class="why-content">
+      <div class="eyebrow fade-in">Pourquoi Clifford Chance</div>
+      <div class="why-intro fade-in">
+        L'un des rares environnements où la data science,<br>l'IA et le droit convergent à très haut niveau.
+      </div>
+      <div class="why-reasons fade-in">
+
+        <div class="why-card">
+          <div class="why-num">I</div>
+          <div class="why-title">Data Science réelle, pas décorative</div>
+          <div class="why-text">Clifford Chance intègre des data scientists dans ses opérations — pas pour communiquer sur la technologie, mais pour résoudre des problèmes réels : analyse documentaire NLP, traduction automatique, interfaces en langage naturel. C'est exactement le type de travail que je souhaite faire.</div>
+        </div>
+
+        <div class="why-card">
+          <div class="why-num">II</div>
+          <div class="why-title">Gouvernance &amp; EU AI Act</div>
+          <div class="why-text">Votre cabinet a organisé l'AI Fringe de Paris en février 2025 et travaille sur les implications de l'EU AI Act. La gouvernance responsable de l'IA m'intéresse profondément — c'est un sujet où technique et droit se rejoignent de manière fascinante.</div>
+        </div>
+
+        <div class="why-card">
+          <div class="why-num">III</div>
+          <div class="why-title">Environnement international &amp; exigeant</div>
+          <div class="why-text">Trilingue, formé à la rigueur scientifique, et ayant géré des projets en autonomie, je recherche un environnement où l'excellence est une norme, pas une exception. Clifford Chance correspond exactement à cette ambition.</div>
+        </div>
+
+      </div>
+      <div class="why-statement fade-in">
+        <div class="why-statement-text">
+          « Je ne réponds pas à une offre. Je viens proposer un profil qui me semble cohérent avec vos enjeux actuels — traitement documentaire IA, data science appliquée, systèmes RAG — et demander l'opportunité de vous le démontrer. »
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PAGE 10 · CONTACT -->
+<section id="contact">
+  <div class="container">
+    <div class="eyebrow fade-in">Contact</div>
+    <div class="contact-headline fade-in">
+      Disponible dès<br>juillet 2026.<br>Paris.
+    </div>
+    <div class="contact-grid fade-in">
+      <div class="contact-item">
+        <div class="ci-label">Téléphone</div>
+        <a class="ci-value" href="tel:+33640343578">+33 6 40 34 35 78</a>
+      </div>
+      <div class="contact-item">
+        <div class="ci-label">Email</div>
+        <a class="ci-value" href="mailto:youcef.akil@outlook.fr">youcef.akil@outlook.fr</a>
+      </div>
+      <div class="contact-item">
+        <div class="ci-label">LinkedIn</div>
+        <a class="ci-value" href="https://www.linkedin.com/in/youcef-zakaria-akil/">youcef-zakaria-akil</a>
+      </div>
+      <div class="contact-item">
+        <div class="ci-label">Contact recommandé par</div>
+        <span class="ci-value">Arslane Benarbia</span>
+      </div>
+    </div>
+    <div class="contact-footer fade-in">
+      <div class="cf-brand">Akil Youcef-Zakaria</div>
+      <div class="cf-note">Candidature spontanée · Clifford Chance Paris · Data / AI / Innovation · 2026</div>
+    </div>
+  </div>
+</section>
+
+<script>
+  const obs = new IntersectionObserver(
+    entries => entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }
+    }),
+    { threshold: 0.1 }
+  );
+  document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
+</script>
+</body>
+</html>
